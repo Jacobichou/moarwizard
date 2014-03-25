@@ -1,0 +1,19 @@
+entity:
+pein
+name
+gender
+address
+phone
+email
+ssn
+
+
+patient:
+last visit
+upcoming visit
+insurance name
+occupation
+
+staff:
+date of employ
+position
