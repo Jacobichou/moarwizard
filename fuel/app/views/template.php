@@ -35,6 +35,7 @@
 		</div>
 		<footer>
 			<p class="pull-right">Page rendered in {exec_time}s using {mem_usage}mb of memory.</p>
+			<small>© 2014 Clinic of Clinicstan</small>
 		</footer>
 	</div>
 </body>
