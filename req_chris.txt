@@ -1,0 +1,11 @@
+caclulate changes
+submit records
+create diagnosis
+view lab results
+view vitals
+edit appointment
+create appointment
+edit appointment
+submit patient info
+edit patient info
+submit changes
