@@ -76,16 +76,16 @@ return array(
 	 * Groups as id => array(name => <string>, roles => <array>)
 	 */
 	'groups' => array(
-		/**
-		 * Examples
-		 * ---
-		 *
-		 * -1   => array('name' => 'Banned', 'roles' => array('banned')),
-		 * 0    => array('name' => 'Guests', 'roles' => array()),
-		 * 1    => array('name' => 'Users', 'roles' => array('user')),
-		 * 50   => array('name' => 'Moderators', 'roles' => array('user', 'moderator')),
-		 * 100  => array('name' => 'Administrators', 'roles' => array('user', 'moderator', 'admin')),
-		 */
+		 -1   => array('name' => 'Banned', 'roles' => array('banned')),
+		 0    => array('name' => 'Patient', 'roles' => array('user', 'patient')),
+		 1    => array('name' => 'Lab Technician', 'roles' => array('user', 'lab')),
+		 50   => array('name' => 'Nurse', 'roles' => array('user', 'nurse')),
+		 60   => array('name' => 'Receptionist', 'roles' => array('user', 'reception')),
+		 70   => array('name' => 'Physician Assistant', 'roles' => array('user', 'doc')),
+		 71   => array('name' => 'Doctor', 'roles' => array('user', 'doc')),
+		 90   => array('name' => 'Office Manager', 'roles' => array('user', 'offman')),
+		 100  => array('name' => 'Administrators', 'roles' => array('user', 'admin')),
+		 
 	),
 
 	/**
