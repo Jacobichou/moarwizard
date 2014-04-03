@@ -74,6 +74,7 @@ class Log
 		catch (\Exception $e)
 		{
 			\Config::set('log_threshold', \Fuel::L_NONE);
+			var_dump($e->getMessage()); die();
 			throw new \FuelException('Unable to create or write to the log file. Please check the permissions on '.\Config::get('log_path').'. ('.$e->getMessage().')');
 		}
 

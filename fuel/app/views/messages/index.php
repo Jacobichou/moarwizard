@@ -29,6 +29,7 @@
 <p>No Messages.</p>
 
 <?php endif; ?><p>
+<?php if (Auth::instance()->check()) : ?>
 	<?php echo Html::anchor('messages/create', 'Add new Message', array('class' => 'btn btn-success')); ?>
-
+<?php endif; ?>
 </p>
