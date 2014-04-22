@@ -1,9 +1,11 @@
 Moarwizard::Application.routes.draw do
+  # get "dashboards/overview"
   devise_for :users
   root 'static_pages#welcome'
   
   match '/about', to: 'static_pages#about', via: 'get'
   match '/help', to: 'static_pages#help', via: 'get'
+  match '/dashboard', to: 'dashboards#overview', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
