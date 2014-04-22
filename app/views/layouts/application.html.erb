@@ -1,14 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   <title><%= full_title(yield(:title)) %></title>
+
+   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
-<%= yield %>
+   <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+         <nav class="tab-bar">
+            <section class="left-small">
+               <a class="left-off-canvas-toggle menu-icon hide-for-medium-up" href="#"><span></span></a>
+            </section>
 
+            <section class="middle tab-bar-section">
+               <h1 class="title">EMIS</h1>
+            </section>
+
+            <section class="right-small">
+               <a class="right-off-canvas-toggle menu-icon" href="#"><span></span></a>
+            </section>
+         </nav>
+
+         <aside class="left-off-canvas-menu">
+            <ul class="off-canvas-list">
+               <li><label>Profile</label></li>
+               <li><a href="#">User Name</a></li>
+               <li><a href="#">BeepBoop</a></li>
+            </ul>
+         </aside>
+
+         <aside class="right-off-canvas-menu">
+            <ul class="off-canvas-list">
+               <li><label>Messaging</label></li>
+               <li><a href="#">[DR] Ms. Dr. Krunkenstein</a></li>
+               <li><a href="#">[PA] Chip Chipstonster</a></li>
+               <li><a href="#">[PA] Manu Kanchiekeu</a></li>
+            </ul>
+         </aside>
+
+         <section class="main-section">
+            <%= yield %>
+         </section>
+
+         <a class="exit-off-canvas"></a>
+
+      </div>
+   </div>
+
+   <!-- Footer -->
+
+   <footer class="row">
+      <div class="large-12 columns">
+         <hr />
+         <div class="row">
+            <div class="large-6 columns">
+               <p>&copy; Clinics of Clinicistan 2014</p>
+            </div>
+            <div class="large-6 columns">
+               <ul class="inline-list right">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Help</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Support</a></li>
+               </ul>
+            </div>
+         </div>
+      </div> 
+   </footer>
+
+   <%= javascript_include_tag "application" %>
 </body>
 </html>
