@@ -44,6 +44,21 @@
    <!-- Main Feed -->
    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
    <div class="large-6 columns">
+      <div class="row">
+         <div class="row">
+            <div class="small-3 large-3 columns"><i class="step fi-mail size-72"></i></div>
+            <div class="small-3 large-3 columns"><i class="step fi-calendar size-72"></i></div>
+            <div class="small-3 large-3 columns"><i class="step fi-clipboard-notes size-72"></i></div>
+            <div class="small-3 large-3 columns"><i class="step fi-results-demographics size-72"></i></div>
+         </div>
+         
+         <div class="row">
+            <div class="small-3 large-3 columns"><p>Messages</p></div>
+            <div class="small-3 large-3 columns"><p>Calendar</p></div>
+            <div class="small-3 large-3 columns"><p>Reports</p></div>
+            <div class="small-3 large-3 columns">Profile</i></div>
+         </div>
+      </div>
 
       <% if current_user.messages.any? %>
          <h3>Messages (<%= @messages.count %>)</h3>
