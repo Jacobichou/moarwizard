@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422194140) do
+ActiveRecord::Schema.define(version: 20140423151617) do
+
+  create_table "charts", force: true do |t|
+    t.integer  "user_id"
+    t.string   "bp"
+    t.string   "heart_rate"
+    t.integer  "resp_rate"
+    t.integer  "temp"
+    t.string   "given_symptoms"
+    t.string   "observed_symptoms"
+    t.string   "comments"
+    t.string   "diagnosis"
+    t.string   "prognosis"
+    t.string   "visit_purpose"
+    t.string   "preconditions"
+    t.integer  "height"
+    t.integer  "weight"
+    t.string   "verbal_instructions"
+    t.string   "notes"
+    t.integer  "lab_request"
+    t.integer  "attachment_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", force: true do |t|
     t.integer  "user_id"
