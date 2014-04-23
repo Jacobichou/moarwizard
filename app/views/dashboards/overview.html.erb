@@ -45,6 +45,13 @@
    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
    <div class="large-6 columns">
 
+   <% if current_user.messages.any? %>
+      <h3>Messages (<%= current_user.messages.count %>)</h3>
+      <!-- <ul class="messages"> -->
+        <%= render partial: 'message', collection: @messages %>
+      <!-- </ul> -->
+    <% end %>
+
       <!-- Feed Entry -->
       <div class="row">
          <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[DOC]" /></div>

@@ -3,6 +3,8 @@ class DashboardsController < ApplicationController
    before_action :correct_user
 
    def overview
+      @msg = current_user.messages.build
+      @messages = current_user.feed
    end
 
    def correct_user

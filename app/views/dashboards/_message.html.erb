@@ -1,0 +1,30 @@
+
+
+<!-- Feed Entry -->
+<div id="<%= message.id %>" class="row">
+   <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[DOC]" /></div>
+   <div class="large-10 columns">
+      <p><strong>Most recent chart:</strong>
+         <img src="http://placehold.it/600x80&text=[I am a chart link]" />
+         <%= message.content %>
+      </p>
+      <pre>Posted <%= time_ago_in_words(message.created_at) %> ago.</pre>
+      <ul class="inline-list">
+         <li><a href="">Comment</a></li>
+      </ul>
+
+
+      <h6>2 Comments</h6>
+      <div class="row">
+         <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[DOC]" /></div>
+         <div class="large-10 columns"><p>Your last visit was really a check-up. However, I am a little concerned with your most recent blood pressure.</p></div>
+      </div>
+      <div class="row">
+         <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[PATIENT]" /></div>
+         <div class="large-10 columns"><p>Thanks for your concern. But it was jus' cuz I ate, lik, 70 slices a dat bacon before seei'n ya! ;) ;)</p></div>
+      </div>
+   </div>
+</div>
+<!-- End Feed Entry -->
+
+<hr />
