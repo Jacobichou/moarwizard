@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423154413) do
+ActiveRecord::Schema.define(version: 20140423162347) do
 
   create_table "charts", force: true do |t|
     t.integer  "user_id"
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 20140423154413) do
     t.string   "address"
     t.string   "phone"
     t.string   "insurance"
+    t.integer  "insur_grp_id"
+    t.string   "insur_policy_acc"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

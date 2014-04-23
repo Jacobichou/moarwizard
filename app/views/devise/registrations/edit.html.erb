@@ -15,8 +15,14 @@
   <div class= "row"><%= f.label :phone %><br />
   <%= f.telephone_field :phone, class: "large-10 columns", autofocus: true %></div>
 
-  <div class= "row"><%= f.label :insurance %><br />
+  <div class= "row"><%= f.label :insurance, 'Insurance Company' %><br />
   <%= f.text_field :insurance, class: "large-10 columns", autofocus: true %></div>
+
+  <div class= "row"><%= f.label :insur_policy_acc, 'Insurance Policy Account Number' %><br />
+  <%= f.text_field :insur_policy_acc, class: "large-10 columns", autofocus: true %></div>
+
+  <div class= "row"><%= f.label :insur_grp_id, 'Insurance Group ID' %><br />
+  <%= f.text_field :insur_grp_id, class: "large-10 columns", autofocus: true %></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div  class= "row">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
