@@ -14,15 +14,16 @@
 ActiveRecord::Schema.define(version: 20140422194140) do
 
   create_table "messages", force: true do |t|
-    t.integer  "pein"
-    t.integer  "recipient_pein"
+    t.integer  "user_id"
+    t.integer  "recipient_id"
     t.string   "subject"
     t.string   "content"
+    t.integer  "attachment",   default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "messages", ["pein", "created_at"], name: "index_messages_on_pein_and_created_at"
+  add_index "messages", ["user_id", "created_at"], name: "index_messages_on_user_id_and_created_at"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
