@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423170829) do
+ActiveRecord::Schema.define(version: 20140423173224) do
 
   create_table "charts", force: true do |t|
     t.integer  "user_id"
@@ -47,6 +47,20 @@ ActiveRecord::Schema.define(version: 20140423170829) do
   end
 
   add_index "messages", ["user_id", "created_at"], name: "index_messages_on_user_id_and_created_at"
+
+  create_table "reports", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "type"
+    t.integer  "attachment"
+    t.string   "purpose"
+    t.string   "tests_performed"
+    t.string   "tests_request"
+    t.string   "included_specimen"
+    t.string   "lab_notes"
+    t.string   "request_notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
