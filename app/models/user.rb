@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
 
 
    def feed
-      Message.where("user_id = ?", id)
+      Message.where("recipient_id = ?", id)
    end
 end

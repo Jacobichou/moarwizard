@@ -4,8 +4,8 @@
 <div id="<%= message.id %>" class="row">
    <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[DOC]" /></div>
    <div class="large-10 columns">
-      <p><strong>Most recent chart:</strong>
-         <img src="http://placehold.it/600x80&text=[I am a chart link]" />
+      <p><strong>sent you the message:</strong>
+         <!-- <a href="#"><img src="http://placehold.it/600x80&text=[I am a chart link]" /></a> -->
          <%= message.content %>
       </p>
       <pre>Posted <%= time_ago_in_words(message.created_at) %> ago.</pre>
@@ -16,7 +16,7 @@
 
       <h6>2 Comments</h6>
       <div class="row">
-         <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[DOC]" /></div>
+         <div class="large-2 columns small-3"><%= image_tag("dr_strange.jpg") %></div>
          <div class="large-10 columns"><p>Your last visit was really a check-up. However, I am a little concerned with your most recent blood pressure.</p></div>
       </div>
       <div class="row">
