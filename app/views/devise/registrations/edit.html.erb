@@ -1,0 +1,46 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class= "row"><%= f.label :email %><br />
+  <%= f.email_field :email, class: "large-10 columns", autofocus: true %></div>
+
+  <div class= "row"><%= f.label :dob, 'Date of Birth' %><br />
+  <%= f.date_field :dob, class: "large-10 columns", autofocus: true %></div>
+
+  <div class= "row"><%= f.label :address %><br />
+  <%= f.text_field :address, class: "large-10 columns", autofocus: true %></div>
+
+  <div class= "row"><%= f.label :phone %><br />
+  <%= f.telephone_field :phone, class: "large-10 columns", autofocus: true %></div>
+
+  <div class= "row"><%= f.label :insurance %><br />
+  <%= f.text_field :insurance, class: "large-10 columns", autofocus: true %></div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div  class= "row">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class= "row"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, class: "large-10 columns", autocomplete: "off" %></div>
+
+  <div class= "row"><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, class: "large-10 columns", autocomplete: "off" %></div>
+
+  <div class= "row"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, class: "large-10 columns", autocomplete: "off" %></div>
+
+  <div class= "row"><%= f.submit "Update" %></div>
+<% end %>
+
+<div class="row">
+  <div class="large-11 columns">
+    <h3>Cancel my account</h3>
+
+    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+    <%= link_to "Back", :back %>
+  </div>
+</div>
+
