@@ -1,0 +1,45 @@
+Create profile - we'll have sub types of this for patients, employee/staff,
+               pharma reps, etc.
+
+manage profile - gloss for adding, removing, changing data in a profile; profile
+               suspsension/deactivation; those types of things
+
+request profile update - triggered by time or another actor; goes through
+                     'notify party' to send a noti to targeted party
+
+/*!/
+
+Make appointment - general appointment case for any type of appointment;
+                  most commonly going to be for patient visits, but also used
+                  for pharma rep visits, doctor conferences, etc.
+Cancel appointment - general case to cancel any type of appointment; is a special
+                     case of re-schedule
+Re-confirm appointment - general case for confirming an appointment;
+                     e.g. the patient asked for appointment at such and such
+                     time and date, this is used to confirm
+Re-schedule appointment - general case for rescheduling; uses 'cancel' and 'make'
+
+generate system backup
+restore system
+
+send invoice
+generate invoice
+manage invoice
+generate itemized reciept
+
+write prescription
+re-write prescription
+
+refer specialist
+
+notify party
+
+accept payment
+
+generate patient visit chart
+generate lab report
+
+view chart
+modify chart
+
+log errors
