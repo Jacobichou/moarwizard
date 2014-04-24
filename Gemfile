@@ -36,6 +36,7 @@ gem 'jquery-rails', '3.0.4'
 gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 gem 'foundation-rails'
+gem 'foundation-icons-sass-rails'
 gem 'devise'
 gem 'factory_girl_rails'
 
