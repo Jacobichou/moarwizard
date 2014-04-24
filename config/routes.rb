@@ -1,5 +1,6 @@
 Moarwizard::Application.routes.draw do
   resources :messages, only: [:create, :destroy]
+  resources :charts, only: [:index, :create, :destroy]
   # get "dashboards/overview"
   devise_for :users
   root 'static_pages#welcome'

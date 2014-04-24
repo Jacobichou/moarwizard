@@ -50,24 +50,30 @@
 
       </div>
 
-      MAKE THESE ACCORDIONS, ANANAS
-      <%= render 'messages/message_form' %>
-
-      <% if @messages.any? %>
-         <div class="row">
-            <div class="large-12 medium-4 columns">
-               <ul class="no-bullet">
-                  <li class="message-item-panel">
-                     <div class="row">
-                        <div class="large-12">
-                           <%= render partial: 'message_list', collection: @messages %>
-                        </div>
+      <div class="row">
+         <div class="large-12 columns">
+            <dl class="tabs" data-tab>
+               <dd class="active"><a href="#view-msgs">View Messages</a></dd>
+               <dd><a href="#send-msgs">Send Message</a></dd>               
+            </dl>
+            <div class="tabs-content">
+               <div class="content active" id="view-msgs">
+                  <div class="row">
+                     <div class="large-12 columns">
+                        <dl class="accordion" data-accordion>
+                           <% if @messages.any? %>
+                              <%= render partial: 'message_list', collection: @messages %>
+                           <% end %>
+                        </dl>
                      </div>
-                  </li>
-               </ul>
+                  </div>
+               </div>
+               <div class="content" id="send-msgs">
+                  <%= render 'messages/message_form' %>
+               </div>
             </div>
          </div>
-      <% end %>
+      </div>
 
    </div>
 
