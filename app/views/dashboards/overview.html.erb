@@ -16,51 +16,43 @@
 <div class="row">
 
    <!-- Nav Sidebar -->
-   <div class="large-3 columns ">
+   <!-- <div class="large-3 columns ">
       <div class="panel">
          <a href="#"><img src="http://placehold.it/300x240&text=[MAHfACE]" /></a>
-         <h5><a href="#"><%= current_user.email %></a></h5>
+         <h5><a href="#"><= current_user.email %></a></h5>
          <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
             <section class="section">
                <h5 class="title">
-                  <%= link_to "Personal Information", edit_user_registration_path %>
+                  <= link_to "Personal Information", edit_user_registration_path %>
                </h5>
             </section>
             <section class="section">
                <h5 class="title">
-                  <!-- <= link_to "Reports", reports_summary_path %> -->
+
                </h5>
             </section>
             <section class="section">
                <h5 class="title">
-                  <!-- <= link_to "Appointments", appointments_path %> -->
+
                </h5>
             </section>
          </div>
 
       </div>
-   </div>
+   </div> -->
 
    <!-- Main Feed -->
    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-   <div class="large-6 columns">
+   <div class="large-9 columns">
       <div class="large-12 columns">
          
-         <div class="row">
-            <div class="row">
-               <div class="small-3 large-3 columns dash-icons active-icon"><a href="<%= messages_path %>"><i class="step fi-mail size-72"></i></a></div>
-               <div class="small-3 large-3 columns dash-icons"><a href="/dashboard"><i class="step fi-calendar size-72"></i></a></div>
-               <div class="small-3 large-3 columns dash-icons"><a href="/dashboard"><i class="step fi-clipboard-notes size-72"></i></a></div>
-               <div class="small-3 large-3 columns dash-icons"><a href="<%= edit_user_registration_path %>"><i class="step fi-results-demographics size-72"></i></a></div>
-            </div>
-            
-            <div class="row">
-               <div class="small-3 large-3 columns dash-icons active-icon"><a href="<%= messages_path %>"><p>Messages</p></a></div>
-               <div class="small-3 large-3 columns dash-icons"><a href="<%= dashboard_path %>"><p>Calendar</p></a></div>
-               <div class="small-3 large-3 columns dash-icons"><a href="/dashboard"><p>Reports</p></a></div>
-               <div class="small-3 large-3 columns dash-icons"><a href="<%= edit_user_registration_path %>"><p>Profile</p></a></div>
-            </div>
-         </div>
+         <ul class="small-block-grid-3 medium-block-grid-4 large-block-grid-5">
+            <li class="dash-icons active-icon"><a href="<%= dashboard_path %>"><i class="step fi-graph-bar size-72"></i>Dashboard</a></li>
+            <li class="dash-icons"><a href="<%= edit_user_registration_path %>"><i class="step fi-results-demographics size-72"></i>Profile</a></li>
+            <li class="dash-icons"><a href="<%= messages_path %>"><i class="step fi-mail size-72"></i>Message</a></li>
+            <li class="dash-icons"><a href="/dashboard"><i class="step fi-calendar size-72"></i>Calendar</a></li>
+            <li class="dash-icons"><a href="/dashboard"><i class="step fi-clipboard-notes size-72"></i>&nbsp;&nbsp;Reports</a></li>
+         </ul>
 
       </div>
 

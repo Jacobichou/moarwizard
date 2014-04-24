@@ -1,20 +1,85 @@
 <br>
-MAKE THESE ACCORDIONS, ANANAS
-<%= render 'messages/message_form' %>
+<!-- Header and Nav -->
 
-<% if @messages.any? %>
-   <div class="row">
-      <div class="large-12 medium-4 columns">
-         <ul class="no-bullet">
-            <li class="message-item-panel">
-               <div class="row">
-                  <div class="large-12">
-                     <%= render partial: 'message_list', collection: @messages %>
-                  </div>
-               </div>
-            </li>
-         </ul>
+<div class="row">
+   <div class="large-12 columns">
+      <div class="panel">
+         <h1>Health &amp; Wellness Overview</h1>
       </div>
    </div>
-<% end %>
+</div>
 
+<!-- End Header and Nav -->
+
+
+<div class="row">
+
+   <!-- Nav Sidebar -->
+   
+
+   <!-- Main Feed -->
+   <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+   <div class="large-9 columns">
+      <div class="large-12 columns">
+         
+<!--          <div class="row">
+            <div class="row">
+               <div class="small-3 large-3 columns dash-icons"><a href="<%= dashboard_path %>"><i class="step fi-graph-bar size-72"></i></a></div>
+               <div class="small-3 large-3 columns dash-icons active-icon"><a href="<%= messages_path %>"><i class="step fi-mail size-72"></i></a></div>
+               <div class="small-3 large-3 columns dash-icons"><a href="/dashboard"><i class="step fi-calendar size-72"></i></a></div>
+               <div class="small-3 large-3 columns dash-icons"><a href="/dashboard"><i class="step fi-clipboard-notes size-72"></i></a></div>
+               <div class="small-3 large-3 columns dash-icons"><a href="<%= edit_user_registration_path %>"><i class="step fi-results-demographics size-72"></i></a></div>
+            </div>
+            
+            <div class="row">
+               <div class="small-3 large-3 columns dash-icons"><a href="<%= dashboard_path %>"><p>Dashboard</p></a></div>
+               <div class="small-3 large-3 columns dash-icons active-icon"><a href="<%= messages_path %>"><p>Messages</p></a></div>
+               <div class="small-3 large-3 columns dash-icons"><a href="<%= dashboard_path %>"><p>Calendar</p></a></div>
+               <div class="small-3 large-3 columns dash-icons"><a href="/dashboard"><p>Reports</p></a></div>
+               <div class="small-3 large-3 columns dash-icons"><a href="<%= edit_user_registration_path %>"><p>Profile</p></a></div>
+            </div>
+         </div> -->
+
+         <ul class="small-block-grid-3 medium-block-grid-4 large-block-grid-5">
+            <li class="dash-icons"><a href="<%= dashboard_path %>"><i class="step fi-graph-bar size-72"></i>Dashboard</a></li>
+            <li class="dash-icons"><a href="<%= edit_user_registration_path %>"><i class="step fi-results-demographics size-72"></i>Profile</a></li>
+            <li class="dash-icons active-icon"><a href="<%= messages_path %>"><i class="step fi-mail size-72"></i>Message</a></li>
+            <li class="dash-icons"><a href="/dashboard"><i class="step fi-calendar size-72"></i>Calendar</a></li>
+            <li class="dash-icons"><a href="/dashboard"><i class="step fi-clipboard-notes size-72"></i>&nbsp;&nbsp;Reports</a></li>
+         </ul>
+
+      </div>
+
+      MAKE THESE ACCORDIONS, ANANAS
+      <%= render 'messages/message_form' %>
+
+      <% if @messages.any? %>
+         <div class="row">
+            <div class="large-12 medium-4 columns">
+               <ul class="no-bullet">
+                  <li class="message-item-panel">
+                     <div class="row">
+                        <div class="large-12">
+                           <%= render partial: 'message_list', collection: @messages %>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      <% end %>
+
+   </div>
+
+   <!-- Right Sidebar -->
+   <!-- On small devices this column is hidden -->
+   <aside class="large-3 columns hide-for-small">
+      <ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-2">
+         <li><img src="http://placehold.it/200x200&text=[xray]" /></li>
+         <li><img src="http://placehold.it/200x200&text=[MRI]" /></li>
+         <li><img src="http://placehold.it/200x200&text=[xray]" /></li>
+         <li><img src="http://placehold.it/200x200&text=[xray]" /></li>
+      </ul>
+   </aside>
+
+</div>
