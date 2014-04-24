@@ -8,6 +8,7 @@ class DashboardsController < ApplicationController
    end
 
    def messages
+      @msg = current_user.messages.build
       @messages = current_user.feed
    end
 

@@ -1,0 +1,6 @@
+<div id="<%= message_list.id %>" class="panel">
+   <p class="secondary label">From: <%= message_list.user.email %></p>
+   <h5><strong><%= message_list.subject %></strong></h5>
+   <p><%= message_list.content %></p>
+   <pre class="small-text-right"><%= time_ago_in_words(message_list.created_at) %> ago</pre>
+</div>

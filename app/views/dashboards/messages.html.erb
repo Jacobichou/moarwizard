@@ -1,4 +1,17 @@
-<% if current_user.messages.any? %>
-   <h3>Messages (<%= @messages.count %>)</h3>
-   <%= render partial: 'message', collection: @messages %>
+<br>
+<% if @messages.any? %>
+   <div class="row">
+      <div class="large-12 medium-4 columns">
+         <ul class="no-bullet">
+            <li class="message-item-panel">
+               <div class="row">
+                  <div class="large-12">
+                     <%= render partial: 'message_list', collection: @messages %>
+                  </div>
+               </div>
+            </li>
+         </ul>
+      </div>
+   </div>
 <% end %>
+
