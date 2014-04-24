@@ -2,9 +2,9 @@
 
 <!-- Feed Entry -->
 <div id="<%= message.id %>" class="row">
-   <div class="large-2 columns small-3"><%= image_tag("dr_strange.jpg") %></div>
+   <div class="large-2 columns small-3"><%= image_tag("dr_strange.jpg", size: "80x80") %></div>
    <div class="large-10 columns">
-      <p><strong>sent you the message:</strong>
+      <p><strong><span class="subheader message-sender"><%= message.user.email.upcase %></span>&nbsp;sent you the message:</strong>
          <!-- <a href="#"><img src="http://placehold.it/600x80&text=[I am a chart link]" /></a> -->
          <%= message.content %>
       </p>
@@ -16,11 +16,12 @@
 
       <h6>2 Comments</h6>
       <div class="row">
-         <div class="large-2 columns small-3"><%= image_tag("dr_strange.jpg") %></div>
+         <div class="large-2 columns small-3"><%= image_tag("dr_strange.jpg", size: "60x60") %></div>
          <div class="large-10 columns"><p>Your last visit was really a check-up. However, I am a little concerned with your most recent blood pressure.</p></div>
       </div>
+      <hr />
       <div class="row">
-         <div class="large-2 columns small-3"><%= image_tag("patient.jpg") %></div>
+         <div class="large-2 columns small-3"><%= image_tag("patient.jpg", size: "60x60") %></div>
          <div class="large-10 columns"><p>Thanks for your concern. But it was jus' cuz I ate, lik, 70 slices a dat bacon before seei'n ya! ;) ;)</p></div>
       </div>
    </div>

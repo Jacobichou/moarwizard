@@ -7,6 +7,10 @@ class DashboardsController < ApplicationController
       @messages = current_user.feed
    end
 
+   def messages
+      @messages = current_user.feed
+   end
+
    def correct_user
       # @user = User.find(params[:id])
 
