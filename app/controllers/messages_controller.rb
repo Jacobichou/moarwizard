@@ -1,11 +1,13 @@
 class MessagesController < ApplicationController
   def create
    @message = current_user.messages.build(message_params)
+   session[:return_to] ||= request.referer
    if @message.save
       flash[:success] = "Message sent!"
-      redirect_to root_url
+      redirect_to session.delete(:return_to)
    else
-      render 'dashboard/overview'
+      flash[:warning] = "Message not sent!"
+      redirect_to messages_path
    end
   end
 
