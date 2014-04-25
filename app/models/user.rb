@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
    def feed
       Message.where("recipient_id = ?", id)
    end
+
+   def feed_sent
+     Message.where("user_id = ?", id)
+   end
 end

@@ -10,6 +10,7 @@ class DashboardsController < ApplicationController
    def messagess
       @msg = current_user.messages.build
       @messages = current_user.feed
+      @sent_messages = current_user.feed_sent
    end
 
    def correct_user

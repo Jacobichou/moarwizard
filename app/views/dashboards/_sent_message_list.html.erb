@@ -1,0 +1,10 @@
+<dd>
+   <a href="#msg-<%= sent_message_list.id %>">
+      <h5><strong><%= sent_message_list.subject %></strong></h5>
+      To: <%= recipient(sent_message_list.recipient_id) %>
+      <pre class="small-text-right"><%= time_ago_in_words(sent_message_list.created_at) %> ago</pre>
+   </a>
+   <div id="msg-<%= sent_message_list.id %>" class="content">
+         <p><%= sent_message_list.content %></p>
+   </div>
+</dd>
