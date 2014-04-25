@@ -1,7 +1,7 @@
 class ChartsController < ApplicationController
 
   def index
-    
+    @charts = current_user.chart_feed
   end
 
   def create

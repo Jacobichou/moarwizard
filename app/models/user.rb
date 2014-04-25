@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
    def feed_sent
      Message.where("user_id = ?", id)
    end
+
+   def chart_feed
+      Chart.where("user_id = ?", id)
+   end
 end

@@ -15,32 +15,6 @@
 
 <div class="row">
 
-   <!-- Nav Sidebar -->
-   <!-- <div class="large-3 columns ">
-      <div class="panel">
-         <a href="#"><img src="http://placehold.it/300x240&text=[MAHfACE]" /></a>
-         <h5><a href="#"><= current_user.email %></a></h5>
-         <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
-            <section class="section">
-               <h5 class="title">
-                  <= link_to "Personal Information", edit_user_registration_path %>
-               </h5>
-            </section>
-            <section class="section">
-               <h5 class="title">
-
-               </h5>
-            </section>
-            <section class="section">
-               <h5 class="title">
-
-               </h5>
-            </section>
-         </div>
-
-      </div>
-   </div> -->
-
    <!-- Main Feed -->
    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
    <div class="large-9 columns">
@@ -51,7 +25,7 @@
             <li class="dash-icons"><a href="<%= edit_user_registration_path %>"><i class="step fi-results-demographics size-72"></i>Profile</a></li>
             <li class="dash-icons"><a href="<%= messages_path %>"><i class="step fi-mail size-72"></i>Message</a></li>
             <li class="dash-icons"><a href="/dashboard"><i class="step fi-calendar size-72"></i>Calendar</a></li>
-            <li class="dash-icons"><a href="/dashboard"><i class="step fi-clipboard-notes size-72"></i>&nbsp;&nbsp;Reports</a></li>
+            <li class="dash-icons"><a href="<%= charts_path %>"><i class="step fi-clipboard-notes size-72"></i>&nbsp;&nbsp;Reports</a></li>
          </ul>
 
       </div>
