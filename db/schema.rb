@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423173224) do
+ActiveRecord::Schema.define(version: 20140427032551) do
+
+  create_table "appointments", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "apt_date"
+    t.datetime "apt_time"
+    t.integer  "attending_physician"
+    t.integer  "rescheduled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "calendars", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "appointment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "charts", force: true do |t|
     t.integer  "user_id"
