@@ -26,6 +26,6 @@ class DashboardsController < ApplicationController
       # 90  = lab
       # 100 = admin
 
-      redirect_to(root_url) unless current_user.role == 0
+      redirect_to(root_url) unless current_user.role == 0 || 30
    end
 end

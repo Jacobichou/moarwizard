@@ -1,7 +1,7 @@
 Moarwizard::Application.routes.draw do
   resources :calendars, only: [:index, :create, :new, :update, :edit, :destroy]
   resources :messages, only: [:create, :destroy]
-  resources :charts, only: [:index, :create, :new, :destroy]
+  resources :charts, only: [:index, :create, :new, :update, :edit, :destroy]
 
   devise_for :users
   root 'static_pages#welcome'
@@ -10,6 +10,8 @@ Moarwizard::Application.routes.draw do
   match '/help', to: 'static_pages#help', via: 'get'
   match '/dashboard', to: 'dashboards#overview', via: 'get'
   match '/messages', to: 'dashboards#messagess', via: 'get'
+
+  get 'charts', to: 'charts#check_in'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
