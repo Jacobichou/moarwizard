@@ -1,13 +1,10 @@
 <div class="row">
    <div class="large-12 columns">
+      <h2>Patient Chart</h2>
+
       <%= form_for :chart, url: charts_path do |f| %>
          <div class="row">
-            <%= f.label :user_id %>
-            <%= f.text_field :user_id %>
-         </div>
-
-         <div class="row">
-            <%= f.label :user_id %>
+            <%= f.label :user_id, "Patient Name" %>
             <%= f.text_field :user_id %>
          </div>
 

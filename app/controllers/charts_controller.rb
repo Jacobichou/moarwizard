@@ -5,14 +5,14 @@ class ChartsController < ApplicationController
   end
 
   def create
-   @chart = current_user.charts.build(chart_params)
+   @chart = Chart.create(chart_params)
    session[:return_to] ||= request.referer
    if @chart.save
       flash[:success] = "Chart generated!"
       redirect_to session.delete(:return_to)
    else
       flash[:warning] = "Chart not generated!"
-      redirect_to messages_path
+      render "new"
    end
   end
 
@@ -20,7 +20,6 @@ class ChartsController < ApplicationController
   end
 
   def show
-     
   end
 
   private
