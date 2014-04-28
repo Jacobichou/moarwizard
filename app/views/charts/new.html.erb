@@ -1,0 +1,98 @@
+<div class="row">
+   <div class="large-12 columns">
+      <%= form_for :chart, url: charts_path do |f| %>
+         <div class="row">
+            <%= f.label :user_id %>
+            <%= f.text_field :user_id %>
+         </div>
+
+         <div class="row">
+            <%= f.label :user_id %>
+            <%= f.text_field :user_id %>
+         </div>
+
+         <div class="row">
+            <%= f.label :bp %>
+            <%= f.text_field :bp %>
+         </div>
+
+         <div class="row">
+            <%= f.label :heart_rate %>
+            <%= f.text_field :heart_rate %>
+         </div>
+
+         <div class="row">
+            <%= f.label :resp_rate %>
+            <%= f.text_field :resp_rate %>
+         </div>
+
+         <div class="row">
+            <%= f.label :temp %>
+            <%= f.text_field :temp %>
+         </div>
+
+         <div class="row">
+            <%= f.label :given_symptoms %>
+            <%= f.text_field :given_symptoms %>
+         </div>
+
+         <div class="row">
+            <%= f.label :observed_symptoms %>
+            <%= f.text_field :observed_symptoms %>
+         </div>
+
+         <div class="row">
+            <%= f.label :comments %>
+            <%= f.text_field :comments %>
+         </div>
+
+         <div class="row">
+            <%= f.label :diagnosis %>
+            <%= f.text_field :diagnosis %>
+         </div>
+
+         <div class="row">
+            <%= f.label :prognosis %>
+            <%= f.text_field :prognosis %>
+         </div>
+
+         <div class="row">
+            <%= f.label :visit_purpose %>
+            <%= f.text_field :visit_purpose %>
+         </div>
+
+         <div class="row">
+            <%= f.label :preconditions %>
+            <%= f.text_field :preconditions %>
+         </div>
+
+         <div class="row">
+            <%= f.label :height %>
+            <%= f.text_field :height %>
+         </div>
+
+         <div class="row">
+            <%= f.label :weight %>
+            <%= f.text_field :weight %>
+         </div>
+
+         <div class="row">
+            <%= f.label :verbal_instructions %>
+            <%= f.text_field :verbal_instructions %>
+         </div>
+
+         <div class="row">
+            <%= f.label :notes %>
+            <%= f.text_field :notes %>
+         </div>
+
+         <div class="row">
+            <%= f.label :lab_request %>
+            <%= f.text_field :lab_request %>
+         </div>
+
+         <div class="row">
+            <%= f.submit "Save", class: "button" %>
+      <% end %>
+   </div>
+</div>

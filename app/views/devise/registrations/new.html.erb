@@ -1,41 +1,64 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="row"><%= f.label :email %><br />
-  <%= f.email_field :email, class: "large-10 columns", autofocus: true %></div>
-
-  <div class= "row"><%= f.label :dob, 'Date of Birth' %><br />
-  <%= f.date_field :dob, class: "large-10 columns", autofocus: true %></div>
-
-  <div class= "row"><%= f.label :address %><br />
-  <%= f.text_field :address, class: "large-10 columns", autofocus: true %></div>
-
-  <div class= "row"><%= f.label :phone %><br />
-  <%= f.telephone_field :phone, class: "large-10 columns", autofocus: true %></div>
-
-  <div class= "row"><%= f.label :insurance, 'Insurance Company' %><br />
-  <%= f.text_field :insurance, class: "large-10 columns", autofocus: true %></div>
-
-  <div class= "row"><%= f.label :insur_policy_acc, 'Insurance Policy Account Number' %><br />
-  <%= f.text_field :insur_policy_acc, class: "large-10 columns", autofocus: true %></div>
-
-  <div class= "row"><%= f.label :insur_grp_id, 'Insurance Group ID' %><br />
-  <%= f.text_field :insur_grp_id, class: "large-10 columns", autofocus: true %></div>
-
-  <div class= "row"><%= f.label :password %><br />
-    <%= f.password_field :password, class: "large-10 columns", autocomplete: "off" %></div>
-
-  <div class= "row"><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, class: "large-10 columns", autocomplete: "off" %></div>
-
-  <div class= "row"><%= f.submit "Sign up", class: 'button success' %></div>
-<% end %>
-
 <div class="row">
-   <div class="large-10 columns">
-      <%= render "devise/shared/links" %>
-   </div>
-</div>
+  <div class="large-12 columns">
+      <h2>Sign up</h2>
 
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="row">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, class: "large-10 columns", autofocus: true %>
+        </div>
+
+        <div class= "row">
+          <%= f.label :dob, 'Date of Birth' %><br />
+          <%= f.date_field :dob, class: "large-10 columns", autofocus: true %>
+        </div>
+
+        <div class= "row">
+          <%= f.label :address %><br />
+          <%= f.text_field :address, class: "large-10 columns", autofocus: true %>
+        </div>
+
+        <div class= "row">
+          <%= f.label :phone %><br />
+          <%= f.telephone_field :phone, class: "large-10 columns", autofocus: true %>
+        </div>
+
+        <div class= "row">
+          <%= f.label :insurance, 'Insurance Company' %><br />
+          <%= f.text_field :insurance, class: "large-10 columns", autofocus: true %>
+        </div>
+
+        <div class= "row">
+          <%= f.label :insur_policy_acc, 'Insurance Policy Account Number' %><br />
+          <%= f.text_field :insur_policy_acc, class: "large-10 columns", autofocus: true %>
+        </div>
+
+        <div class= "row">
+          <%= f.label :insur_grp_id, 'Insurance Group ID' %><br />
+          <%= f.text_field :insur_grp_id, class: "large-10 columns", autofocus: true %>
+        </div>
+
+        <div class= "row">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, class: "large-10 columns", autocomplete: "off" %>
+        </div>
+
+        <div class= "row">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, class: "large-10 columns", autocomplete: "off" %>
+        </div>
+
+        <div class= "row">
+            <%= f.submit "Sign up", class: 'button success' %>
+        </div>
+      <% end %>
+
+      <div class="row">
+         <div class="large-10 columns">
+            <%= render "devise/shared/links" %>
+         </div>
+      </div>
+  </div>
+</div>

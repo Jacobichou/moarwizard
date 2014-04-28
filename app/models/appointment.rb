@@ -5,4 +5,6 @@ class Appointment < ActiveRecord::Base
    # time and date are stored as datetime objects
 
    belongs_to: user
+
+   
 end
