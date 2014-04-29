@@ -5,7 +5,7 @@
       <%= form_for :chart, url: charts_path do |f| %>
          <div class="row">
             <%= f.label :user_id, "Patient Name" %>
-            <%= f.text_field :user_id %>
+            <%= collection_select(:user, :user_id, User.where("role = ?", 1), :id, :get_name) %>
          </div>
 
          <div class="row">
