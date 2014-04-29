@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
   def create
    @appointment = current_user.appointments.create(appointment_params)
-   session[:return_to] ||= request.referer
+   # session[:return_to] ||= request.referer
 
    if Appointment.exists?(apt_date: @appointment.apt_date, created_at:@appointment.created_at)
     # @appointment.destroy
@@ -11,7 +11,8 @@ class AppointmentsController < ApplicationController
    else
      if @appointment.save
         flash[:success] = "Appointment scheduled!"
-        redirect_to session.delete(:return_to)
+        # redirect_to session.delete(:return_to)
+        redirect_to calendars_path
      else
         flash[:warning] = "Appointment not scheduled!"
         render "new"
