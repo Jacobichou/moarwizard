@@ -14,7 +14,7 @@
 
    <div class="row">
       <%= f.label :attending_physician, "Preferred Doctor/PA" %>
-      <%= collection_select(:chart, :attending_physician, User.where("role = ? OR role = ?", 30, 100), :id, :get_name) %>
+      <%= collection_select(:chart, :attending_physician, User.where("role = ? OR role = ?", 60, 66), :id, :get_name) %>
    </div>
 
    <div class= "row"><%= f.submit "Create", class: "button" %></div>
