@@ -42,13 +42,14 @@ gem 'jbuilder', '1.0.2'
 gem 'foundation-rails'
 gem 'devise'
 gem 'factory_girl_rails'
-# gem 'mysql2'
+# 
 
 group :doc do
    gem 'sdoc', '0.3.20', require: false
 end
 
 group :production do
-   gem 'pg', '0.15.1'
+   # gem 'pg', '0.15.1'
+   gem 'mysql2'
    gem 'rails_12factor', '0.0.2'
 end
