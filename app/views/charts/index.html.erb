@@ -22,13 +22,7 @@
    <div class="large-9 columns">
       <div class="large-12 columns">
 
-         <ul class="small-block-grid-3 medium-block-grid-4 large-block-grid-5">
-            <li class="dash-icons"><a href="<%= dashboard_path %>"><i class="step fi-graph-bar size-72"></i>Dashboard</a></li>
-            <li class="dash-icons"><a href="<%= edit_user_registration_path %>"><i class="step fi-results-demographics size-72"></i>Profile</a></li>
-            <li class="dash-icons"><a href="<%= messages_path %>"><i class="step fi-mail size-72"></i>Message</a></li>
-            <li class="dash-icons"><a href="/dashboard"><i class="step fi-calendar size-72"></i>Calendar</a></li>
-            <li class="dash-icons active-icon"><a href="<%= charts_path %>"><i class="step fi-clipboard-notes size-72"></i>&nbsp;&nbsp;Reports</a></li>
-         </ul>
+         <%= render partial: 'shared/nav_controls' %>
 
       </div>
 
