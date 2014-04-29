@@ -6,7 +6,10 @@
 
    <div class="row">
       <%= f.label :apt_time, "Time" %>
-      <%= f.select(:apt_time, 1..12) %>
+      <!-- <= f.select(:apt_time, 1..12) %> -->
+      <% my_time = Time.now + 5.days + 7.hours + 3.minutes + 14.seconds %>
+      <!-- <= select_time(my_time,html_options={class:"large-3 columns"}) %> -->
+      <%= time_select 'chart', 'apt_time', {ampm: true} %>
    </div>
 
    <div class="row">

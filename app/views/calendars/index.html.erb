@@ -1,4 +1,28 @@
+<% provide(:title, 'Calendar') %>
+<br>
+<!-- Header and Nav -->
 
+<div class="row">
+   <div class="large-12 columns">
+      <div class="panel">
+         <h1>Health &amp; Wellness Overview</h1>
+      </div>
+   </div>
+</div>
+
+<!-- End Header and Nav -->
+
+
+<div class="row">
+
+   <!-- Main Feed -->
+   <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+   <div class="large-9 columns">
+      <div class="large-12 columns">
+
+         <%= render partial: 'shared/nav_controls' %>
+
+      </div>
 
 <!-- schedule appointment -->
 <div class="row">
@@ -15,7 +39,7 @@
 
 <!-- calendar -->
 <div class="row calendar">
-      <div class=" large-10 columns">
+      <div class=" large-12 columns">
       
         <table class="calendar">
         
@@ -51,9 +75,9 @@
               <td>
                 <div>
                   <span class="day">1</span>
-                  <span class="event green">Team1 vs Team2</span>
-                  <span class="event yellow">Practice</span>
-                  <span class="event blue">Team1 vs Team2</span>
+                  <span class="event green">Unavailable</span>
+                  <span class="event yellow">Doctor out of office</span>
+                  <span class="event blue">Unavailable</span>
                 </div>
               </td>
               <td>
@@ -64,7 +88,7 @@
               <td>
                 <div>
                   <span class="day">3</span>
-                  <span class="event yellow">Team1 vs Team2</span>
+                  <span class="event yellow">Closing early</span>
                 </div>
               </td>
               <td>
@@ -87,7 +111,7 @@
               <td>
                 <div>
                   <span class="day">7</span>
-                  <span class="event yellow">Practice</span>
+                  <span class="event yellow">Unavailable</span>
                 </div>
               </td>
               <td>
@@ -98,7 +122,7 @@
               <td>
                 <div>
                   <span class="day">9</span>
-                  <span class="event yellow">Team1 vs Team2</span>
+                  <span class="event yellow">Unavailable</span>
                 </div>
               </td>
               <td>
@@ -131,8 +155,8 @@
               <td>
                 <div>
                   <span class="day">15</span>
-                  <span class="event yellow">Team1 vs Team2</span>
-                  <span class="event blue">Practice</span>
+                  <span class="event yellow">Unavailable</span>
+                  <span class="event blue">Unavailable</span>
                 </div>
               </td>
               <td>
@@ -148,7 +172,7 @@
               <td>
                 <div>
                   <span class="day">18</span>
-                  <span class="event blue">Team1 vs Team2</span>
+                  <span class="event blue">Unavailable</span>
                 </div>
               </td>
             </tr>
@@ -181,13 +205,13 @@
               <td>
                 <div>
                   <span class="day">24</span>
-                  <span class="event green">Team1 vs Team2</span>
+                  <span class="event green">Unavailable</span>
                 </div>
               </td>
               <td>
                 <div>
                   <span class="day">25</span>
-                  <span class="event green">Practice</span>
+                  <span class="event green">Unavailable</span>
                 </div>
               </td>
             </tr>
@@ -234,3 +258,15 @@
         
       </div>
     </div>
+
+   </div>
+
+   <!-- Right Sidebar -->
+   <!-- On small devices this column is hidden -->
+   <aside class="large-3 columns <%= "hide-for-small" unless current_user.role == 30 || 100 %>">
+      <ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-2">
+         <%= render partial: 'dashboards/side_bar' %>
+      </ul>
+   </aside>
+
+</div>

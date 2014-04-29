@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
    has_many :messages
    has_many :charts
    has_many :reports
-   has_many :appointments, through: :calendar
+   has_many :appointments
 
    # ROLES:
       # -1  = inactive

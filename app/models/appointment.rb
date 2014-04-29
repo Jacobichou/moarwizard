@@ -4,8 +4,6 @@ class Appointment < ActiveRecord::Base
    # attending_physician indicates the id of the physician/pa to be seen
    # time and date are stored as datetime objects
 
-   belongs_to :user
-
-   
+   has_many :users
    
 end
