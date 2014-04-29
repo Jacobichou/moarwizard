@@ -2,6 +2,7 @@ Moarwizard::Application.routes.draw do
   resources :calendars, only: [:index, :create, :new, :update, :edit, :destroy]
   resources :messages, only: [:create, :destroy]
   resources :charts, only: [:index, :create, :new, :update, :edit, :destroy]
+  resources :appointments, only: [:create, :new, :update, :edit, :destroy]
 
   devise_for :users
   root 'static_pages#welcome'

@@ -1,0 +1,24 @@
+<%= form_for :chart, url: appointments_path do |f| %>
+   <div class="row">
+      <%= f.label :apt_date, "Date" %>
+      <%= f.date_field :apt_date %>
+   </div>
+
+   <div class="row">
+      <%= f.label :apt_time, "Time" %>
+      <%= f.select(:apt_time, 1..12) %>
+   </div>
+
+   <div class="row">
+      <%= f.label :attending_physician, "Preferred Doctor/PA" %>
+      <%= collection_select(:chart, :attending_physician, User.where("role = ? OR role = ?", 30, 100), :id, :get_name) %>
+   </div>
+
+   <div class= "row"><%= f.submit "Create", class: "button" %></div>
+<% end %>
+
+<!-- t.integer :user_id
+      t.datetime :apt_date
+      t.datetime :apt_time
+      t.integer :attending_physician
+      t.integer :rescheduled -->
