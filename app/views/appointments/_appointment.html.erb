@@ -1,0 +1,44 @@
+<dd>
+   <a href="#chart-<%= chart.id %>"><%= chart.created_at.to_formatted_s(:long) %></a>
+   <div id="chart-<%= chart.id %>" class="content">
+
+      <h5 class="subheader"><%= chart.user.full_name %></h5>
+      <h4>Vitals</h4>
+      <ul class="no-bullet">
+         <li><strong>BP:&nbsp;</strong><%= chart.bp %></li>
+         <li><strong>Height:&nbsp;</strong><%= chart.height %></li>
+         <li><strong>Weight:&nbsp;</strong><%= chart.weight %></li>
+         <li><strong>Heart Rate:&nbsp;</strong><%= chart.heart_rate %></li>
+         <li><strong>Respiratory Rate:&nbsp;</strong><%= chart.resp_rate %></li>
+         <li><strong>Body Temperature:&nbsp;</strong><%= chart.temp %></li>
+      </ul>
+      <hr>
+      <h4>Collected from Patient</h4>
+      <ul class="no-bullet">
+         <li><strong>Purpose:&nbsp;</strong><%= chart.visit_purpose %></li>
+         <li><strong>Symptoms:&nbsp;</strong><%= chart.given_symptoms %></li>
+         <li><strong>Preconditions&nbsp;</strong><%= chart.preconditions %></li>
+      </ul>
+      <hr>
+      <h4>Observed by Doctor/PA/Nurse</h4>
+      <ul class="no-bullet">
+         <li><strong>Symptoms:&nbsp;</strong><%= chart.observed_symptoms %></li>
+         <li><strong>Comments:&nbsp;</strong><%= chart.comments %></li>
+         <li><strong>Diagnosis:&nbsp;</strong><%= chart.diagnosis %></li>
+         <li><strong>Prognosis:&nbsp;</strong><%= chart.prognosis %></li>
+      </ul>
+      <hr>
+      <h4>Instructions Given</h4>
+      <ul class="no-bullet">
+         <li><strong>Verbal Instruction:&nbsp;</strong><%= chart.verbal_instructions %></li>
+      </ul>
+      <hr>
+      <h4>Misc</h4>
+      <ul class="no-bullet">
+         <li><strong>Notes:&nbsp;</strong><%= chart.notes %></li>
+         <li><strong>Lab Requests:&nbsp;</strong><%= chart.lab_request %></li>
+      </ul>
+      <br>
+      <%= link_to('View Attachment', class:"button") %>
+   </div>
+</dd>

@@ -11,7 +11,7 @@ Moarwizard::Application.routes.draw do
   match '/help', to: 'static_pages#help', via: 'get'
   match '/dashboard', to: 'dashboards#overview', via: 'get'
   match '/messages', to: 'dashboards#messagess', via: 'get'
-  match '/calendars', to: 'calendars#index', via: 'get'
+  match '/calendar', to: 'calendars#index', via: 'get'
 
   get 'charts', to: 'charts#check_in'
   # The priority is based upon order of creation: first created -> highest priority.
