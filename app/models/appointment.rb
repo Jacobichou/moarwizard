@@ -6,6 +6,7 @@ class Appointment < ActiveRecord::Base
    # time and date are stored as datetime objects
 
    has_many :users
+   default_scope -> { order('apt_date ASC') }
 
    class ApptCallbacks
      def after_save(record)

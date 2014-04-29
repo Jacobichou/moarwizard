@@ -3,6 +3,7 @@ class CalendarsController < ApplicationController
   # before_action :correct_user
 
   def index
+    @appointments = current_user.appointment_feed
   end
 
   def create

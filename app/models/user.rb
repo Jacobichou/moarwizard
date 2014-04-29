@@ -32,6 +32,10 @@ class User < ActiveRecord::Base
       Chart.where("user_id = ?", id)
    end
 
+   def appointment_feed
+      Appointment.where("user_id = ?", id)
+   end
+
    def get_name
       "#{full_name}"
       # "#{full_name}" if role == 60 || role == 66

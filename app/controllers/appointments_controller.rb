@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
    @appointment = current_user.appointments.create(appointment_params)
    session[:return_to] ||= request.referer
 
-   if Appointment.exists?(apt_date: @appointment.apt_date)
+   if Appointment.exists?(apt_date: @appointment.apt_date, created_at:@appointment.created_at)
     # @appointment.destroy
     flash[:success] = "This date is already taken!"
     # taken_datetime(@appointment)
