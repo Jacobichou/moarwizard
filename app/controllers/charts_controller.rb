@@ -19,6 +19,7 @@ class ChartsController < ApplicationController
   end
 
   def check_in
+    # Chart.
   end
 
   def destroy
