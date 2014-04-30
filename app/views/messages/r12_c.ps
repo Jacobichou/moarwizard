@@ -1,0 +1,78 @@
+/ProcessBlue{0.96 0 0 0 setcmykcolor} def /Red{0 1 1 0 setcmykcolor} def /BurntOrange{0 0.51 1 0 setcmykcolor} def /Periwinkle{0.57 0.55 0 0 setcmykcolor} def /Purple{0.45 0.86 0 0 setcmykcolor} def /Goldenrod{0 0.10 0.84 0 setcmykcolor} def /Green{1 0 1 0 setcmykcolor} def
+/White{0 0 0 0 setcmykcolor} def
+%variables
+/title
+/Bodoni-BoldCondensed findfont 56 scalefont def /subtitle
+/Helvetica findfont [16 0 0 16 0 0] makefont def /slogan
+/Helvetica-Oblique findfont 14 scalefont def
+/text
+/Helvetica findfont 14 scalefont def
+/box {
+} def
+/s exch def
+0 144 rlineto s 0 rlineto
+0 -144 rlineto closepath
+fill
+/diamond {
+9 -14 rlineto -9 -14 rlineto -9 14 rlineto closepath
+} def
+/color {
+newpath
+/x exch def
+/y exch def
+x y moveto
+5 box
+newpath
+x 6 add y moveto 4 box
+x 11 add y moveto 3 box
+x 15 add y moveto 2 box
+x 18 add y moveto 2 box
+x 21 add y moveto 3 box
+x 25 add y moveto 4 box
+x 30 add y moveto 5 box
+} def
+/cardoutline {
+newpath
+90 90 moveto 0 144 rlineto 252 0 rlineto 0 -144 rlineto closepath
+} def
+/background {
+Red 90 91 color BurntOrange 90 127 color Goldenrod 90 163 color Green 90 199 color ProcessBlue 90 235 color Purple 90 271 color Periwinkle 90 307 color
+} def
+/diamonds {
+302 156 moveto Purple
+90 rotate
+115{
+pop diamond 45 rotate
+} for
+45 rotate diamond
+} def
+/rightshow {
+200 550 moveto
+slogan setfont
+("The Sky Is the Limit") stringwidth pop 233 exch sub
+150 moveto
+("The Sky Is the Limit") show
+} def
+/dotext {
+0 setgray
+101 166 moveto subtitle setfont (DESIGNS) show
+rightshow
+ProcessBlue
+215 115 moveto
+text setfont
+(Gabriela Boentges) show Green
+240 100 moveto
+(UTSA Student) show
+} def
+/card
+{2 2 scale
+gsave
+0 setgray
+0.5 setlinewidth cardoutline stroke Purple dotext newpath
+title setfont
+100 180 moveto (DREAM) true charpath clip newpath background grestore
+gsave
+diamonds clip background grestore
+} def
+-120 300 translate card
+showpage
