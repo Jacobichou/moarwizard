@@ -24,10 +24,10 @@
 
       </div>
 
-      <% if @messages.any? %>
-         <h3>Messages (<%= @messages.count %>)</h3>
-           <%= render partial: 'message', collection: @messages %>
-       <% end %>
+       <%= render partial: "patient_dash" if current_user.role == 1 %>
+      <%= render partial: "receptionist_dash" if current_user.role == 30 %>
+      <%= render partial: "nurse_dash" if current_user.role == 50 %>
+      <%= render partial: "doctor_dash" if current_user.role == 60 || current_user == 66 %>
 
    </div>
 

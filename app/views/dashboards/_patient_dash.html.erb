@@ -1,0 +1,4 @@
+<% if @messages.any?%>
+         <h3>Messages (<%= @messages.count %>)</h3>
+           <%= render partial: 'message', collection: @messages %>
+       <% end %>
