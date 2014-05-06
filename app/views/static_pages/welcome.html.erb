@@ -60,7 +60,11 @@
                <p>Feel better now by registering with us today!</p>
             </div>
             <div class="large-3 columns">
-               <a href="#" class="radius button right">Click Here!</a>
+               <% if user_signed_in? %>
+                  <%= link_to "Go to dashboard", dashboard_path, class: "button expand" %>
+               <% else %>
+                  <%= link_to "Sign In", new_user_session_path, class: 'button expand'  %>
+               <% end %>
             </div>
          </div>
       </div>
