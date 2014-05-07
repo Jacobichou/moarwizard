@@ -14,6 +14,7 @@ Moarwizard::Application.routes.draw do
   match '/calendars', to: 'calendars#index', via: 'get'
 
   match 'charts/check_in' => 'charts#check_in', :as => :check_in, via: 'post' #lol, this must be via post, or you'll get double records. I had it as get on accident xD
+  # match 'appointments/edit' => 'appointments#edit', :as => :edit, via: 'post' #lol, this must be via post, or you'll get double records. I had it as get on accident xD
 
   
   # The priority is based upon order of creation: first created -> highest priority.

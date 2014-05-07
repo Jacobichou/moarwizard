@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
   def create
-   @appointment = current_user.appointments.create(appointment_params)
+   @appointment = Appointment.create(appointment_params)
    # session[:return_to] ||= request.referer
 
    if Appointment.exists?(apt_date: @appointment.apt_date, created_at:@appointment.created_at)
@@ -21,24 +21,36 @@ class AppointmentsController < ApplicationController
   end
 
   def update
-    @appointment = Appointment.find(params[:id])
-    session[:return_to] ||= request.referer
-    if @appointment.update(appointment_params)
-      flash[:success] = "Appointment rescheduled!"
-      redirect_to session.delete(:return_to)
-    else
-      render 'edit'
-    end
+    # @appointment = Appointment.find(params[:id])
+    # @patient = User.find_by(id:@appointment.user_id)
+    # @doctor = User.find_by(id:@appointment.user_id)
+    # session[:return_to] ||= request.referer
+    # if @appointment.update(appointment_params)
+    #   flash[:success] = "Appointment rescheduled!"
+    #   redirect_to session.delete(:return_to)
+    # else
+    #   render 'edit'
+    # end
   end
 
   def edit
-    @appointment = Appointment.find(params[:id])
+    @appointment = Appointment.find_by(params[:id])
     @patient = User.find_by(id:@appointment.user_id)
-    @doctor = User.find_by(id:@appointment.user_id)
+    @doctor = User.find_by(id:@appointment.attending_physician)
+
+    @appointment.update(apt_date:params[:apt_date], apt_time:params[:apt_time], attending_physician:params[:attending_physician], user_id:params[:user_id])
+
+    # session[:return_to] ||= request.referer
+    # if @appointment.update(appointment_params)
+    #   flash[:success] = "Appointment rescheduled!"
+    #   redirect_to session.delete(:return_to)
+    # else
+    #   # render 'edit'
+    # end
   end
 
   def destroy
-
+    
   end
 
   private

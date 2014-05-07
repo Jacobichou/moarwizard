@@ -7,7 +7,10 @@ class ChartsController < ApplicationController
   end
 
   def create
-   @chart = Chart.create(chart_params)
+   # @chart = Chart.create(chart_params)
+   @chart = Chart.create(params[:user_id,:bp, :heart_rate, :resp_rate, :temp, :given_symptoms, :observed_symptoms, :comments, :diagnosis,
+                                  :prognosis, :visit_purpose, :preconditions, :height, :weight, :verbal_instructions, :notes ,:lab_request,
+                                  :attachment_type])
    session[:return_to] ||= request.referer
    if @chart.save
       flash[:success] = "Chart generated!"

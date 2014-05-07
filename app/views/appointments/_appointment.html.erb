@@ -1,5 +1,6 @@
 <dd>
    <a href="#appointment-<%= appointment.id %>"><%= appointment.apt_date.to_formatted_s(:month_and_year) unless appointment.apt_date.nil? %></a>
+
    <div id="appointment-<%= appointment.id %>" class="content">
 
       <h6 class="subheader"><%= appointment.apt_time.to_formatted_s(:normal_time) unless appointment.apt_time.nil? %></h5>
@@ -10,7 +11,8 @@
       <br>
       <% if current_user.role == 30 %>
          <%= link_to("Check-in Patient", { controller: "charts", action: "check_in" , user_id: appointment.user_id}, class:"button tiny success", method: "post") %>
-         <%= link_to 'Reschedule', "#", class: "button tiny" %>
+         <%= link_to("Reschedule", { controller: "appointments", action: "edit" , id: appointment.id}, class:"button tiny") %>
+         <!-- <= link_to 'Reschedule', "#", class: "button tiny" %> -->
          <%= link_to 'Cancel', "#", class: "button alert tiny" %>
       <% end %>
    </div>
