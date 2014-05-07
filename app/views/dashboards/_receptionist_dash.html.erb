@@ -1,1 +1,2 @@
 <%= render partial: 'appointments/receptionist_appointment', collection: @appointments %>
+<%= link_to_if(current_user.role == 30 || 100, "Check-in Patient", { controller: "charts", action: "check_in" }, class:"button") %>

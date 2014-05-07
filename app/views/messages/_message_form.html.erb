@@ -7,7 +7,8 @@
 <div class="row">
    <div class="large-12 columns">
       <div class="field">
-         <%= collection_select(:message, :recipient_id, User.where("role = ? OR role = ?", 60, 66, 30, 50), :id, :email) %>
+         <%= collection_select(:message, :recipient_id, User.where("role = ? OR role = ? OR role = ? OR role = ?", 60, 66, 30, 50), :id, :full_name) if current_user.role == 1%>
+         <%= collection_select(:message, :recipient_id, User.all, :id, :full_name) if current_user.role == 30|| current_user.role == 50||current_user.role == 60||current_user.role == 66||current_user.role == 100 %>
          <%= f.text_area :subject, placeholder: "Subject Line" %>
          <%= f.text_area :content, placeholder: "Compose new message..." %>
       </div>
