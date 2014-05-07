@@ -9,7 +9,7 @@
 
       <br>
       <% if current_user.role == 30 %>
-         <%= link_to("Check-in Patient", { controller: "charts", action: "check_in" }, class:"button tiny success") %>
+         <%= link_to("Check-in Patient", { controller: "charts", action: "check_in" , user_id: appointment.user_id}, class:"button tiny success", method: "post") %>
          <%= link_to 'Reschedule', "#", class: "button tiny" %>
          <%= link_to 'Cancel', "#", class: "button alert tiny" %>
       <% end %>
