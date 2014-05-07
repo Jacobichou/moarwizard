@@ -7,6 +7,7 @@ class Appointment < ActiveRecord::Base
 
    has_many :users
    default_scope -> { order('apt_date DESC', 'apt_time ASC') }
+   self.per_page = 5
 
    class ApptCallbacks
      def after_save(record)

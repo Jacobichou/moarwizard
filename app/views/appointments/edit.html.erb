@@ -1,0 +1,86 @@
+<% provide(:title, 'Appointment Rescheduling') %>
+<br>
+<!-- Header and Nav -->
+
+<!-- End Header and Nav -->
+
+
+<div class="row">
+
+   <!-- Main Feed -->
+   <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+   <div class="large-9 columns">
+      <div class="large-12 columns">
+
+         <%= render partial: 'shared/nav_controls' %>
+
+      </div>
+
+      <div class="row">
+         <div class="large-12 columns">
+          <h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= devise_error_messages! %>
+
+            <div class= "row"><%= f.label :email %><br />
+            <%= f.email_field :email, class: "large-10 columns", autofocus: true %></div>
+
+            <div class= "row"><%= f.label :dob, 'Date of Birth' %><br />
+            <%= f.date_field :dob, class: "large-10 columns", autofocus: true %></div>
+
+            <div class= "row"><%= f.label :address %><br />
+            <%= f.text_field :address, class: "large-10 columns", autofocus: true %></div>
+
+            <div class= "row"><%= f.label :phone %><br />
+            <%= f.telephone_field :phone, class: "large-10 columns", autofocus: true %></div>
+
+            <div class= "row"><%= f.label :insurance, 'Insurance Company' %><br />
+            <%= f.text_field :insurance, class: "large-10 columns", autofocus: true %></div>
+
+            <div class= "row"><%= f.label :insur_policy_acc, 'Insurance Policy Account Number' %><br />
+            <%= f.text_field :insur_policy_acc, class: "large-10 columns", autofocus: true %></div>
+
+            <div class= "row"><%= f.label :insur_grp_id, 'Insurance Group ID' %><br />
+            <%= f.text_field :insur_grp_id, class: "large-10 columns", autofocus: true %></div>
+
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div  class= "row">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <% end %>
+
+            <div class= "row"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+              <%= f.password_field :password, class: "large-10 columns", autocomplete: "off" %></div>
+
+            <div class= "row"><%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, class: "large-10 columns", autocomplete: "off" %></div>
+
+            <div class= "row"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+              <%= f.password_field :current_password, class: "large-10 columns", autocomplete: "off" %></div>
+
+            <div class= "row"><%= f.submit "Update", class: "button" %></div>
+          <% end %>
+
+          <div class="row">
+            <div class="large-11 columns">
+              <h3>Cancel my account</h3>
+
+              <p>Unhappy? <%= button_to "Leave clinic", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: "button tiny disabled" %></p>
+
+              <%= link_to "Back", dashboard_path %>
+            </div>
+          </div>
+         </div>
+      </div>
+
+   </div>
+
+   <!-- Right Sidebar -->
+   <!-- On small devices this column is hidden -->
+   <aside class="large-3 columns hide-for-small">
+      <ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-2">
+         <%= render partial: 'dashboards/side_bar' %>
+      </ul>
+   </aside>
+
+</div>
+

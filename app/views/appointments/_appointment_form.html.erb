@@ -1,4 +1,10 @@
 <%= form_for :chart, url: appointments_path do |f| %>
+
+   <%= '<div class="row">'.html_safe if current_user.role == 30 %>
+         <%= f.label :user_id, "Patient" if current_user.role == 30%>
+         <%= collection_select(:user, :user_id, User.where("role = ?", 1), :id, :get_name) if current_user.role == 30%>
+   <%= '</div>'.html_safe if current_user.role == 30 %>
+
    <div class="row">
       <%= f.label :apt_date, "Date" %>
       <%= f.date_field :apt_date %>

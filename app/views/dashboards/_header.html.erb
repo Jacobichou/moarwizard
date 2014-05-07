@@ -1,0 +1,49 @@
+<% if current_user.role == 1 %>
+   <div class="row">
+      <div class="large-12 columns">
+         <div class="panel">
+            <h1>Health &amp; Wellness Overview</h1>
+         </div>
+      </div>
+   </div>
+<% end %>
+
+<% if current_user.role == 30 %>
+   <div class="row">
+      <div class="large-12 columns">
+         <div class="panel">
+            <h1>Receptionist Overview</h1>
+         </div>
+      </div>
+   </div>
+<% end %>
+
+<% if current_user.role == 50 %>
+   <div class="row">
+      <div class="large-12 columns">
+         <div class="panel">
+            <h1>Nurse Overview</h1>
+         </div>
+      </div>
+   </div>
+<% end %>
+
+<% if current_user.role == 60 || current_user.role == 66 %>
+   <div class="row">
+      <div class="large-12 columns">
+         <div class="panel">
+            <h1>Doctor &amp; PA Overview</h1>
+         </div>
+      </div>
+   </div>
+<% end %>
+
+<% if current_user.role == 90 %>
+   <div class="row">
+      <div class="large-12 columns">
+         <div class="panel">
+            <h1>Lab Overview</h1>
+         </div>
+      </div>
+   </div>
+<% end %>
