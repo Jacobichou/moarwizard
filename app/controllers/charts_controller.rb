@@ -35,6 +35,7 @@ class ChartsController < ApplicationController
   end
 
   def destroy
+    
   end
 
   def show
