@@ -8,7 +8,10 @@
       </ul>
 
       <br>
-      <%= link_to 'Reschedule', "#", class: "button tiny" %>
-      <%= link_to 'Cancel', "#", class: "button alert tiny" %>
+      <% if current_user.role == 30 %>
+         <%= link_to("Check-in Patient", { controller: "charts", action: "check_in" }, class:"button tiny success") %>
+         <%= link_to 'Reschedule', "#", class: "button tiny" %>
+         <%= link_to 'Cancel', "#", class: "button alert tiny" %>
+      <% end %>
    </div>
 </dd>

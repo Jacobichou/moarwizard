@@ -5,6 +5,7 @@ class DashboardsController < ApplicationController
    def overview
       @msg = current_user.messages.build
       @messages = current_user.feed
+      @appointments = Appointment.all
    end
 
    def messagess
