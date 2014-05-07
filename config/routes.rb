@@ -13,8 +13,9 @@ Moarwizard::Application.routes.draw do
   match '/messages', to: 'dashboards#messagess', via: 'get'
   match '/calendars', to: 'calendars#index', via: 'get'
 
-  # get 'charts', to: 'charts#check_in'
   match 'charts/check_in' => 'charts#check_in', :as => :check_in, via: 'post' #lol, this must be via post, or you'll get double records. I had it as get on accident xD
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

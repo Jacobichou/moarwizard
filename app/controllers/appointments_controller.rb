@@ -21,9 +21,20 @@ class AppointmentsController < ApplicationController
   end
 
   def update
+    @appointment = Appointment.find(params[:id])
+    session[:return_to] ||= request.referer
+    if @appointment.update(appointment_params)
+      flash[:success] = "Appointment rescheduled!"
+      redirect_to session.delete(:return_to)
+    else
+      render 'edit'
+    end
   end
 
   def edit
+    @appointment = Appointment.find(params[:id])
+    @patient = User.find_by(id:@appointment.user_id)
+    @doctor = User.find_by(id:@appointment.user_id)
   end
 
   def destroy
