@@ -19,20 +19,14 @@ class ChartsController < ApplicationController
   end
 
   def check_in
-    @chart = Chart.create(user_id:params[:user_id], bp:"600/44")
+    @chart = Chart.create(user_id:params[:user_id])
     @patient = User.find_by(id:params[:user_id])
-    
-
-    # session[:return_to] ||= request.referer
     if @chart.save
       flash[:success] = "#{@patient.full_name} checked in!"
-      # Chart.last.destroy
-      # redirect_to dashboard_path
+      redirect_to dashboard_path
     else
       flash[:warning] = "Something went wrong with checking in the patient. Please, try again. :)"
     end
-
-    redirect_to charts_path
 
     # redirect_to dashboard_path, :flash => { :success => "#{@patient.full_name} checked in!" }
   end
