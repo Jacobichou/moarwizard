@@ -1,0 +1,45 @@
+<dd>
+   <a href="#chart-<%= patient_chart_list.id %>"><%= patient_chart_list.created_at.to_formatted_s(:long) %></a>
+   <div id="chart-<%= patient_chart_list.id %>" class="content">
+
+      <h5 class="subheader"><%= patient_chart_list.user.full_name %></h5>
+      <h4>Vitals</h4>
+      <ul class="no-bullet">
+         <li><strong>Height:&nbsp;</strong><%= patient_chart_list.height %></li>
+         <li><strong>Weight:&nbsp;</strong><%= patient_chart_list.weight %></li>
+         <li><strong>BP:&nbsp;</strong><%= patient_chart_list.bp %></li>
+         <li><strong>Heart Rate:&nbsp;</strong><%= patient_chart_list.heart_rate %></li>
+         <li><strong>Respiratory Rate:&nbsp;</strong><%= patient_chart_list.resp_rate %></li>
+         <li><strong>Body Temperature:&nbsp;</strong><%= patient_chart_list.temp %></li>
+      </ul>
+      <hr>
+      <h4>Collected from Patient</h4>
+      <ul class="no-bullet">
+         <li><strong>Purpose:&nbsp;</strong><%= patient_chart_list.visit_purpose %></li>
+         <li><strong>Symptoms:&nbsp;</strong><%= patient_chart_list.given_symptoms %></li>
+         <li><strong>Preconditions&nbsp;</strong><%= patient_chart_list.preconditions %></li>
+      </ul>
+      <hr>
+      <h4>Observed by Doctor/PA/Nurse</h4>
+      <ul class="no-bullet">
+         <li><strong>Symptoms:&nbsp;</strong><%= patient_chart_list.observed_symptoms %></li>
+         <li><strong>Comments:&nbsp;</strong><%= patient_chart_list.comments %></li>
+         <li><strong>Diagnosis:&nbsp;</strong><%= patient_chart_list.diagnosis %></li>
+         <li><strong>Prognosis:&nbsp;</strong><%= patient_chart_list.prognosis %></li>
+      </ul>
+      <hr>
+      <h4>Instructions Given</h4>
+      <ul class="no-bullet">
+         <li><strong>Verbal Instruction:&nbsp;</strong><%= patient_chart_list.verbal_instructions %></li>
+      </ul>
+      <hr>
+      <h4>Misc</h4>
+      <ul class="no-bullet">
+         <li><strong>Notes:&nbsp;</strong><%= patient_chart_list.notes %></li>
+         <li><strong>Lab Requests:&nbsp;</strong><%= patient_chart_list.lab_request %></li>
+         <li><strong>Late fee:&nbsp;</strong>$<%= patient_chart_list.late_fee %></li>
+      </ul>
+      <br>
+      <%= link_to 'View Attachment', "#", class:"button tiny"  %>
+   </div>
+</dd>

@@ -32,6 +32,10 @@ class User < ActiveRecord::Base
       Chart.where("user_id = ?", id)
    end
 
+   def chart_feed_all
+    Chart.all
+   end
+
    def appointment_feed
       Appointment.where("user_id = ?", id)
    end

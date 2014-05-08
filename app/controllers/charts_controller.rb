@@ -3,7 +3,11 @@ class ChartsController < ApplicationController
   # before_action :correct_user
 
   def index
-    @charts = current_user.chart_feed
+    # if current_user.role == 1
+      @charts = current_user.chart_feed
+    # elsif current_user.role == 50 || current_user.role == 60 || current_user.role == 66
+      @chart_all = Chart.all
+    # end
   end
 
   def create
@@ -24,6 +28,8 @@ class ChartsController < ApplicationController
   def check_in
     @chart = Chart.create(user_id:params[:user_id])
     @patient = User.find_by(id:params[:user_id])
+    @chart.update(checked_in:1)
+
     if @chart.save
       flash[:success] = "#{@patient.full_name} checked in!"
       redirect_to dashboard_path
@@ -32,6 +38,13 @@ class ChartsController < ApplicationController
     end
 
     # redirect_to dashboard_path, :flash => { :success => "#{@patient.full_name} checked in!" }
+  end
+
+  def late
+    @chart = Chart.last
+    @chart.update(late_fee:30)
+    flash[:success] = "Patient marked as late"
+    redirect_to dashboard_path
   end
 
   def destroy

@@ -11,9 +11,14 @@
       <br>
       <% if current_user.role == 30 %>
          <%= link_to("Check-in Patient", { controller: "charts", action: "check_in" , user_id: appointment.user_id}, class:"button tiny success", method: "post") %>
+         <%= link_to('Mark as Late', { controller: "charts", action: "late" , id: appointment.id}, class:"button tiny", method: "post") %>
+      <% end %>
+      <% if current_user.role == 30 || current_user.role == 1 %> 
          <%= link_to("Reschedule", { controller: "appointments", action: "edit" , id: appointment.id}, class:"button tiny") %>
+         <!-- <= link_to("Edit",edit_appointment_path(appointment)) %> -->
          <!-- <= link_to 'Reschedule', "#", class: "button tiny" %> -->
-         <%= link_to 'Cancel', "#", class: "button alert tiny" %>
+         <%= link_to "Cancel", {:controller => :appointments,
+               :action => 'destroy', :id => appointment.id }, :method => :delete, class: "button alert tiny" %>
       <% end %>
    </div>
 </dd>

@@ -32,9 +32,14 @@
             <div class="row">
                <div class="large-12 columns">
                   <dl class="accordion" data-accordion>
-                     <% if @charts.any? %>
+                     <% if @charts.any? && current_user.role == 1%>
                         <h3>Charts (<%= @charts.count %>)</h3>
-                        <%= render partial: 'chart', collection: @charts %>
+                        <%= render partial: 'patient_chart_list', collection: @charts %>
+                     <% end %>
+
+                     <% if @chart_all.any? && current_user.role == 50 || current_user.role == 60 || current_user.role == 66 %>
+                        <h3>Charts (<%= @chart_all.count %>)</h3>
+                        <%= render partial: 'chart', collection: @chart_all %>
                      <% end %>
                   </dl>
                </div>

@@ -34,7 +34,7 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
-    @appointment = Appointment.find_by(params[:id])
+    @appointment = Appointment.find_by(id:params[:id])
     @patient = User.find_by(id:@appointment.user_id)
     @doctor = User.find_by(id:@appointment.attending_physician)
 
@@ -45,12 +45,35 @@ class AppointmentsController < ApplicationController
     #   flash[:success] = "Appointment rescheduled!"
     #   redirect_to session.delete(:return_to)
     # else
-    #   # render 'edit'
+    #   render 'edit'
     # end
   end
 
+  def reschedule
+    @appointment = Appointment.find_by(params[:id])
+    if @appointment.destroy
+        flash[:success] = "Appointment cancelled!"
+        redirect_to 
+        # redirect_to calendars_path
+     else
+        flash[:warning] = "Appointment not cancelled! Try again."
+        # render "new"
+        redirect_to session.delete(:return_to)
+     end
+  end
+
   def destroy
-    
+    @appointment = Appointment.find_by(id:params[:id])
+    session[:return_to] ||= request.referer
+    if @appointment.destroy
+        flash[:success] = "Appointment cancelled!"
+        redirect_to session.delete(:return_to)
+        # redirect_to calendars_path
+     else
+        flash[:warning] = "Appointment not cancelled! Try again."
+        # render "new"
+        redirect_to session.delete(:return_to)
+     end
   end
 
   private

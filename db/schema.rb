@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428214348) do
+ActiveRecord::Schema.define(version: 20140508133405) do
 
   create_table "appointments", force: true do |t|
     t.integer  "user_id"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 20140428214348) do
     t.integer  "attachment_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "late_fee"
+    t.integer  "checked_in"
   end
 
   create_table "messages", force: true do |t|
