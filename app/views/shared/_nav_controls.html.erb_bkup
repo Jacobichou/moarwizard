@@ -1,0 +1,7 @@
+<ul class="small-block-grid-3 medium-block-grid-4 large-block-grid-5">
+   <li class="dash-icons <%= "active-icon" if request.path=='/dashboard' %>"><a href="<%= dashboard_path %>"><i class="step fi-graph-bar size-72"></i>Dashboard</a></li>
+   <li class="dash-icons <%= "active-icon" if request.path=='/users/edit' %>"><a href="<%= edit_user_registration_path %>"><i class="step fi-results-demographics size-72"></i>Profile</a></li>
+   <li class="dash-icons <%= "active-icon" if request.path=='/messages' %>"><a href="<%= messages_path %>"><i class="step fi-mail size-72"></i>Message</a></li>
+   <li class="dash-icons <%= "active-icon" if request.path=='/calendars' %>"><a href="<%= calendars_path %>"><i class="step fi-calendar size-72"></i>Calendar</a></li>
+   <li class="dash-icons <%= "active-icon" if request.path=='/charts' %>"><a href="<%= charts_path %>"><i class="step fi-clipboard-notes size-72"></i>&nbsp;&nbsp;Reports</a></li>
+</ul>
