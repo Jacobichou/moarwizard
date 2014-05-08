@@ -6,6 +6,7 @@ class DashboardsController < ApplicationController
       @msg = current_user.messages.build
       @messages = current_user.feed
       @appointments = Appointment.paginate(:page => params[:page])
+      @charts = Chart.all
    end
 
    def messagess
